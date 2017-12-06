@@ -19,7 +19,7 @@ function transform(table) {
   return table.map(n => n.split(" ").map( n => parseInt(n)))
 }
 
-function minAndMax(rows) {
+function difference(rows) {
   return rows.map(n => (Math.max.apply(null, n) - Math.min.apply(null, n)))
 }
 
@@ -27,4 +27,4 @@ function sum(numbers) {
   return numbers.reduce((a,b) => a + b)
 }
 
- console.log(sum(minAndMax(transform(table))))
+ console.log(sum(difference(transform(table))))
