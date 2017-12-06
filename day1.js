@@ -13,5 +13,14 @@ function sum(equals) {
   return 0
 }
 
+function pairs(numbers) {
+  return numbers.filter((n, index) => n === numbers[index + (numbers.length/2)])
+}
+
+function halfway(pairs) {
+  if (pairs.length > 0) { return 2*(pairs.reduce((a,b) => (a + b)))}
+  return 0
+}
 
 console.log("Sum of input is: " + sum(equals(transform(input))))
+console.log("Halfway sum: " + halfway(pairs(transform(input))))
