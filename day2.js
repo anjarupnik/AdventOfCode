@@ -27,4 +27,18 @@ function sum(numbers) {
   return numbers.reduce((a,b) => a + b)
 }
 
+function modulo(rows) {
+  var results = []
+  rows.map(line => line.forEach(function(r) {
+     var first = line.filter(n => n%r === 0)
+     var second = r
+    if (first.length > 1) {
+     results.push(Math.max.apply(null, first) / Math.min.apply(null,first)) }
+     return results
+   }))
+
+   return results.reduce((a,b) => a + b)
+}
+
  console.log(sum(difference(transform(table))))
+ console.log(modulo(transform(table)))
