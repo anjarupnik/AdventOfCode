@@ -29,5 +29,6 @@ function steps() {
   return (outerSteps + rowSteps - 1)
 }
 
+
 square(input)
 console.log(steps())
