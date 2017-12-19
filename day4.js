@@ -1,10 +1,10 @@
 const fs = require('fs')
 
 const readStream = fs.createReadStream('./day4-input.txt')
-var data = ''
-var input = []
-var invalid = []
-var checked = []
+let data = ''
+let input = []
+let invalid = []
+let checked = []
 
 readStream
   .on('data', function(chunk) {
@@ -39,8 +39,14 @@ function checkForEquals(password) {
 
 function checkText(input) {
   input.forEach(function(p) {
-    checkForEquals(p)
+    checkAnagrams(p)
     return invalid
   })
   return invalid
+}
+
+function checkAnagrams(password) {
+  let sorted = []
+  sorted = password.map(p => p.toLowerCase().split('').sort().join('').trim())
+  checkForEquals(sorted)
 }
