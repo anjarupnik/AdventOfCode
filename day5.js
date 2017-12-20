@@ -15,8 +15,12 @@ readStream
     while (index < input.length) {
       let move = input[index]
       if (move === 0) { input[index] = move + 1 }
-      if (move > 0) {
+      if (move > 0 && move < 3) {
         input[index] = move + 1
+        index = index + move
+      }
+      if (move >= 3) {
+        input[index]  = move - 1
         index = index + move
       }
       if (move < 0) {
